@@ -10,11 +10,13 @@ import java.awt.*;
  * @Description:星体
  */
 public class Star {
-    private Image image;
-    private double x;
-    private double y;
-    private int width;
-    private int height;
+    Image image;
+    double x;
+    double y;
+    int width;
+    int height;
+
+    public Star(){}
 
     public Star(String path, double x, double y, int width, int height){
         this.image = GameUtil.getImage(path);
