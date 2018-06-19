@@ -12,13 +12,18 @@ import java.awt.*;
  */
 public class SunFrame extends MyFrame {
     Image img = GameUtil.getImage("images/background.jpg");
-    Star star = new Star("images/sun.png",Constant.GAME_WIDTH/2,Constant.GAME_HEIGHT/2,40,40);
-    Planet planet = new Planet(150, 100, 0.1, star, "images/earth.png", 20, 20);
+    Star sun = new Star("images/sun.png",Constant.GAME_WIDTH/2,Constant.GAME_HEIGHT/2,40,40);
+    Planet earth = new Planet(100, 80, 0.1, sun, "images/earth.png", 20, 20);
+    Planet moon = new Planet(40, 40, 0.3, earth, "images/moon.png", 20, 20,true);
+    Planet mars = new Planet(200,130,0.2,sun,"images/saturn.png",20,20);
+
     @Override
     public void paint(Graphics g) {
         g.drawImage(img,0,0,800,600,null);
-        star.draw(g);
-        planet.draw(g);
+        sun.draw(g);
+        earth.draw(g);
+        moon.draw(g);
+        mars.draw(g);
     }
 
     public static void main(String[] args) {

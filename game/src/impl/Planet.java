@@ -15,6 +15,7 @@ public class Planet extends Star{
     double speed;
     Star center;
     double degree;
+    boolean satellite;
 
     public Planet(double longAxis, double shortAxis, double speed, Star center, String path, int width, int height){
         this.center = center;
@@ -29,6 +30,11 @@ public class Planet extends Star{
         this.height = height;
     }
 
+    public Planet(double longAxis, double shortAxis, double speed, Star center, String path, int width, int height, boolean satellite){
+        this(longAxis,shortAxis,speed,center,path,width,height);
+        this.satellite = satellite;
+    }
+
     public Planet(String path, double x, double y, int width, int height) {
         super(path, x, y, width, height);
     }
@@ -36,7 +42,9 @@ public class Planet extends Star{
     @Override
     public void draw(Graphics g) {
         super.draw(g);
-        drawTrace(g);
+        if(!satellite){
+            drawTrace(g);
+        }
         move();
     }
 
