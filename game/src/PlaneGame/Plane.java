@@ -3,7 +3,6 @@ package PlaneGame;
 import util.GameUtil;
 
 import java.awt.*;
-import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 /**
@@ -11,23 +10,26 @@ import java.awt.event.KeyEvent;
  * @Date: 2018/6/20 21:43
  * @Description:
  */
-public class Plane {
-    Image image;
-    double x,y;
-    double speed = 20;
-    boolean left,right,up,down;
+public class Plane extends GameObject{
+    private boolean left,right,up,down;
+    private boolean live = true;
 
     public Plane() {}
 
-    public Plane(String path, double x, double y) {
+    public Plane(String path, double x, double y, int speed) {
         this.image = GameUtil.getImage(path);
+        this.width = image.getWidth(null);
+        this.height = image.getHeight(null);
         this.x = x;
         this.y = y;
+        this.speed = speed;
     }
 
     public void draw(Graphics g){
-        g.drawImage(image,(int)x,(int)y,null);
-        move();
+        if(live){
+            g.drawImage(image,(int)x,(int)y,null);
+            move();
+        }
     }
 
     public void move(){
@@ -98,5 +100,13 @@ public class Plane {
             default:
                 break;
         }
+    }
+
+    public boolean isLive() {
+        return live;
+    }
+
+    public void setLive(boolean live) {
+        this.live = live;
     }
 }

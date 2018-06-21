@@ -8,6 +8,7 @@ import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -17,15 +18,58 @@ import java.util.List;
  */
 public class PlaneGame extends MyFrame {
     Image bg  = GameUtil.getImage("images/background.jpg");
-    Plane plane = new Plane("images/plane.png",350,400);
+    Plane plane = new Plane("images/plane.png",100,400,20);
     List<Bullet> bulletList = new ArrayList<Bullet>();
+
+    Date startTime;
+    Date endTime;
+
+//    boolean stop = false;
 
     public void paint(Graphics g){
         g.drawImage(bg,0,0,null);
         plane.draw(g);
         for (Bullet bullet : bulletList){
+//            if(stop){
+//                bullet.setSpeed(0);
+//            }
             bullet.draw(g);
+            //检测碰撞
+            boolean peng = bullet.getRect().intersects(plane.getRect());
+            if(peng){
+                plane.setLive(false);
+                endTime = new Date();
+//                stop = true;
+            }
         }
+
+        if (!plane.isLive()){
+            printInfo(g,"GAME OVER",30,Constant.GAME_WIDTH/2,Constant.GAME_HEIGHT/2, Color.white);
+            int liveTime = (int) (endTime.getTime() - startTime.getTime())/1000;
+            printInfo(g,"存活时间："+liveTime,10,50,50, Color.yellow);
+            switch (liveTime/10){
+                case 0:
+                case 1:
+                    printInfo(g,"菜鸟",30,400,200, Color.yellow);
+                    break;
+                case 2:
+                    printInfo(g,"正常",30,400,200, Color.yellow);
+                    break;
+                default:
+                    printInfo(g,"高手",30,400,200, Color.yellow);
+                    break;
+            }
+            
+        }
+    }
+
+    public void printInfo(Graphics g, String str, int size, int x, int y, Color color){
+        Color c = g.getColor();
+        g.setColor(Color.white);
+        Font f = new Font("微软雅黑",Font.BOLD,size);
+        g.setFont(f);
+        g.drawString(str,x,y);
+        g.setColor(c);
     }
 
     class KeyMonitor extends KeyAdapter {
@@ -44,10 +88,11 @@ public class PlaneGame extends MyFrame {
     public void launchFrame() {
         super.launchFrame();
         addKeyListener(new KeyMonitor());
-        for (int i=0; i<50; i++){
+        for (int i=0; i<10; i++){
             Bullet bullet = new Bullet(Constant.GAME_WIDTH/2+5,Constant.GAME_HEIGHT/2+5,15,10,10);
             bulletList.add(bullet);
         }
+        startTime = new Date();
     }
 
     public static void main(String[] args) {

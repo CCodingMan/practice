@@ -9,10 +9,8 @@ import java.awt.*;
  * @Date: 2018/6/20 22:42
  * @Description:子弹
  */
-public class Bullet {
-    double x,y,speed,degree;
-    int width = 10;
-    int height = 10;
+public class Bullet extends GameObject{
+    double degree;
 
     public Bullet() {
     }
@@ -24,6 +22,10 @@ public class Bullet {
         this.degree = Math.random()*Math.PI*2;
         this.width = width;
         this.height = height;
+    }
+
+    public Rectangle getRect(){
+        return new Rectangle((int)x, (int)y, width, height);
     }
 
     public void draw(Graphics g){
