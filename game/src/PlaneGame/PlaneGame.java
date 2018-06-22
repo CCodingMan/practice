@@ -23,30 +23,30 @@ public class PlaneGame extends MyFrame {
 
     Date startTime;
     Date endTime;
-
-//    boolean stop = false;
+    Explode baozha = null;
 
     public void paint(Graphics g){
         g.drawImage(bg,0,0,null);
         plane.draw(g);
         for (Bullet bullet : bulletList){
-//            if(stop){
-//                bullet.setSpeed(0);
-//            }
             bullet.draw(g);
             //检测碰撞
             boolean peng = bullet.getRect().intersects(plane.getRect());
             if(peng){
                 plane.setLive(false);
-                endTime = new Date();
-//                stop = true;
+                if(baozha == null){
+                    endTime = new Date();
+                    baozha = new Explode(plane.getX(),plane.getY());
+                }
+                baozha.draw(g);
+                break;
             }
         }
 
         if (!plane.isLive()){
             printInfo(g,"GAME OVER",30,Constant.GAME_WIDTH/2,Constant.GAME_HEIGHT/2, Color.white);
             int liveTime = (int) (endTime.getTime() - startTime.getTime())/1000;
-            printInfo(g,"存活时间："+liveTime,10,50,50, Color.yellow);
+            printInfo(g,"存活时间："+liveTime+"秒",20,30,80, Color.yellow);
             switch (liveTime/10){
                 case 0:
                 case 1:

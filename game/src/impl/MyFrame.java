@@ -9,7 +9,7 @@ import java.awt.event.WindowEvent;
 /**
  * @Auther: ljj
  * @Date: 2018/6/13 21:13
- * @Description:抽象父类
+ * @Description:抽取父类
  */
 public class MyFrame extends Frame {
     /**
