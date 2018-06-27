@@ -24,11 +24,7 @@ public class MyArrayList<E> {
     }
 
     public void add(Object obj){
-        if(size >= elementData.length){
-            Object[] newArray = new Object[size*2+1];
-            System.arraycopy(elementData,0,newArray,0,elementData.length);
-            this.elementData = newArray;
-        }
+        ensureCapacity();
         elementData[size++] = obj;
     }
 
@@ -64,6 +60,14 @@ public class MyArrayList<E> {
     public void checkIndex(int index){
         if(index < 0 || index+1 > elementData.length){
             throw new IllegalArgumentException("illegal index:"+index);
+        }
+    }
+
+    public void ensureCapacity(){
+        if(size >= elementData.length){
+            Object[] newArray = new Object[size*2+1];
+            System.arraycopy(elementData,0,newArray,0,elementData.length);
+            this.elementData = newArray;
         }
     }
 }

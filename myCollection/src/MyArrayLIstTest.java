@@ -5,7 +5,7 @@ import com.ljj.arraylist.MyArrayList;
  * @Date: 2018/6/26 21:54
  * @Description:测试
  */
-public class Test {
+public class MyArrayLIstTest {
     public static void main(String[] args) {
         MyArrayList list = new MyArrayList();
         list.add("a");
@@ -21,7 +21,7 @@ public class Test {
         list.add("n");
 
         System.out.println(list.isEmpty());
-        System.out.println(list.remove(10));
+//        System.out.println(list.remove(10));
         System.out.println(list.size());
     }
 
