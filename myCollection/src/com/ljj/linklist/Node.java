@@ -6,24 +6,24 @@ package com.ljj.linklist;
  * @Description:链表节点
  */
 public class Node {
-    private Object prev;
-    private Object obj;
-    private Object next;
+    Node prev;
+    Object obj;
+    Node next;
 
     public Node() {
     }
 
-    public Node(Object prev, Object obj, Object next) {
+    public Node(Node prev, Object obj, Node next) {
         this.prev = prev;
         this.obj = obj;
         this.next = next;
     }
 
-    public Object getPrev() {
+    public Node getPrev() {
         return prev;
     }
 
-    public void setPrev(Object prev) {
+    public void setPrev(Node prev) {
         this.prev = prev;
     }
 
@@ -35,11 +35,11 @@ public class Node {
         this.obj = obj;
     }
 
-    public Object getNext() {
+    public Node getNext() {
         return next;
     }
 
-    public void setNext(Object next) {
+    public void setNext(Node next) {
         this.next = next;
     }
 }
