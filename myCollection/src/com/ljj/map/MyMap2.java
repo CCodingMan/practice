@@ -18,7 +18,9 @@ public class MyMap2 {
     @SuppressWarnings("unchecked")
     public void put(Object key, Object value){
         MyEntry entry = new MyEntry(key,value);
-        int a = key.hashCode()%arr.length;
+        int hash = key.hashCode();
+        hash = hash<0?-hash:hash;
+        int a = hash%arr.length;
         if(arr[a] == null){
             LinkedList linkList = new LinkedList();
             linkList.add(entry);
@@ -37,7 +39,9 @@ public class MyMap2 {
     }
 
     public Object get(Object key){
-        int a = key.hashCode()%arr.length;
+        int hash = key.hashCode();
+        hash = hash<0?-hash:hash;
+        int a = hash%arr.length;
         if(arr[a] != null){
             LinkedList list = arr[a];
             for (Object aList : list) {
