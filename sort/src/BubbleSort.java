@@ -71,22 +71,30 @@ public class BubbleSort {
 
     private Integer[] bubbleSort(Integer[] source, String sortType){
         Integer temp;
-        for (int i=0; i<source.length; i++){
+        boolean sort = true;
+        for (int i=0; i<source.length-1; i++){
             for (int j=0; j<source.length-i-1; j++){
                 if (source[j] > source[j+1]){
                     if ("1".equals(sortType)){
                         temp = source[j];
                         source[j] = source[j+1];
                         source[j+1] = temp;
+
+                        sort = false;
                     }
                 }else{
                     if ("2".equals(sortType)){
                         temp = source[j];
                         source[j] = source[j+1];
                         source[j+1] = temp;
+
+                        sort = false;
                     }
                 }
 
+            }
+            if(sort){
+                break;
             }
         }
         return source;

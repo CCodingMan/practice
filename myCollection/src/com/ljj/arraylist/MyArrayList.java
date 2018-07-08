@@ -1,5 +1,7 @@
 package com.ljj.arraylist;
 
+import java.util.Iterator;
+
 /**
  * @Auther: ljj
  * @Date: 2018/6/26 21:55
@@ -68,6 +70,38 @@ public class MyArrayList<E> {
             Object[] newArray = new Object[size*2+1];
             System.arraycopy(elementData,0,newArray,0,elementData.length);
             this.elementData = newArray;
+        }
+    }
+
+    public Iterator<E> iterator(){
+        return new Itr();
+    }
+
+    private class Itr implements Iterator<E>{
+        int cursor = -1;
+
+        public Itr() {
+        }
+
+        @Override
+        public boolean hasNext() {
+            return cursor+1<size;
+        }
+
+        @Override
+        public E next() {
+            cursor++;
+            if(cursor >= size){
+                throw new IndexOutOfBoundsException("IndexOutOfBounds cursor");
+            }
+            return (E) elementData[cursor];
+        }
+
+        @Override
+        public void remove() {
+            System.arraycopy(elementData,cursor+1,elementData,cursor,size-(cursor+1));
+            size++;
+            cursor--;
         }
     }
 }
