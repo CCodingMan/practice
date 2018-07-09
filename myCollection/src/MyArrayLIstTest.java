@@ -1,4 +1,4 @@
-import com.ljj.arraylist.MyArrayList;
+import com.ljj.bo.arraylist.MyArrayList;
 
 /**
  * @Auther: ljj

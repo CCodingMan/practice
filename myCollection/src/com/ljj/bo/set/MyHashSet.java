@@ -1,4 +1,4 @@
-package com.ljj.set;
+package com.ljj.bo.set;
 
 import java.util.HashMap;
 

@@ -1,4 +1,4 @@
-import com.ljj.linklist.MyLinkList;
+import com.ljj.bo.linklist.MyLinkList;
 
 /**
  * @Auther: ljj

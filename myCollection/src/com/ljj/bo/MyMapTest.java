@@ -1,10 +1,6 @@
-package com.ljj;
+package com.ljj.bo;
 
-import com.ljj.map.MyMap;
-import com.ljj.map.MyMap2;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.ljj.bo.map.MyMap2;
 
 /**
  * @Auther: ljj

@@ -1,4 +1,4 @@
-package com.ljj.arraylist;
+package com.ljj.bo.arraylist;
 
 import java.util.Iterator;
 

@@ -1,4 +1,4 @@
-package com.ljj.linklist;
+package com.ljj.bo.linklist;
 
 /**
  * @Auther: ljj

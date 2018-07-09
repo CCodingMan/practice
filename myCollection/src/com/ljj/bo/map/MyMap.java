@@ -1,4 +1,4 @@
-package com.ljj.map;
+package com.ljj.bo.map;
 
 /**
  * @Auther: ljj

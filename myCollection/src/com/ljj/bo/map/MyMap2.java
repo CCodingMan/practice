@@ -1,4 +1,4 @@
-package com.ljj.map;
+package com.ljj.bo.map;
 
 import java.util.LinkedList;
 

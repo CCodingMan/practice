@@ -1,10 +1,8 @@
-package com.ljj.Iterator;
+package com.ljj.bo.Iterator;
 
-import com.ljj.arraylist.MyArrayList;
+import com.ljj.bo.arraylist.MyArrayList;
 
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
 /**
  * @Auther: ljj
