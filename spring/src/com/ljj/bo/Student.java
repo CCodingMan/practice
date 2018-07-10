@@ -8,6 +8,7 @@ import java.util.Objects;
  * @Description:学生类
  */
 public class Student {
+    private int id;
     private String no;
     private String name;
     private int age;
@@ -16,11 +17,20 @@ public class Student {
     public Student() {
     }
 
-    public Student(String no, String name, int age, Teacher teacher) {
+    public Student(int id, String no, String name, int age, Teacher teacher) {
+        this.id = id;
         this.no = no;
         this.name = name;
         this.age = age;
         this.teacher = teacher;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNo() {
@@ -56,26 +66,10 @@ public class Student {
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Student student = (Student) o;
-        return age == student.age &&
-                Objects.equals(no, student.no) &&
-                Objects.equals(name, student.name) &&
-                Objects.equals(teacher, student.teacher);
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(no, name, age, teacher);
-    }
-
-    @Override
     public String toString() {
         return "Student{" +
-                "no='" + no + '\'' +
+                "id=" + id +
+                ", no='" + no + '\'' +
                 ", name='" + name + '\'' +
                 ", age=" + age +
                 ", teacher=" + teacher +

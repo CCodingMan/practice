@@ -2,9 +2,17 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
-       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
 
     <!--无参构造创建bean(常用)-->
     <!--<bean id="student" class="com.ljj.bo.Student"/>-->
@@ -86,5 +94,93 @@
 
     <!--若开启则只扫描属性-->
     <!--<context:annotation-config></context:annotation-config>-->
+
+    <!--创建bean-->
+    <!--<bean id="adviceBook" class="com.ljj.bo.AdviceBook"/>-->
+    <!--<bean id="book" class="com.ljj.bo.Book"/>-->
+
+    <!--配置AOP操作-->
+    <!--<aop:config>-->
+        <!--&lt;!&ndash;配置切入点&ndash;&gt;-->
+        <!--<aop:pointcut id="bookPointCut" expression="execution(* com.ljj.bo.Book.add(..))"/>-->
+        <!--&lt;!&ndash;配置切面&ndash;&gt;-->
+        <!--<aop:aspect ref="adviceBook">-->
+            <!--&lt;!&ndash;增强类型&ndash;&gt;-->
+            <!--<aop:before method="before" pointcut-ref="bookPointCut"/>-->
+            <!--<aop:after method="after" pointcut-ref="bookPointCut"/>-->
+            <!--<aop:around method="around" pointcut-ref="bookPointCut"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
+
+    <!--创建bean-->
+    <bean id="userDao" class="com.ljj.dao.UserDao"/>
+    <bean id="userService" class="com.ljj.service.UserService">
+        <property name="userDao" ref="userDao"/>
+    </bean>
+
+    <!--开启aop操作-->
+    <aop:aspectj-autoproxy/>
+
+    <!--创建bean-->
+    <bean id="testAnnoAOP" class="com.ljj.bo.TestAnnoAOP"/>
+    <bean id="testAnnoAOPAdvice" class="com.ljj.bo.TestAnnoAOPAdvice"/>
+
+    <!--c3p0连接池-->
+    <bean id="dateSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql:///test"/>
+        <property name="user" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <!--创建bean-->
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dateSource"/>
+    </bean>
+
+    <bean id="c3p0Dao" class="com.ljj.c3p0.C3p0Dao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="c3p0Service" class="com.ljj.c3p0.C3p0Service">
+        <property name="c3p0Dao" ref="c3p0Dao"/>
+    </bean>
+
+    <!--创建bean-->
+    <bean id="orderDao" class="com.ljj.dao.OrderDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="orderService" class="com.ljj.service.OrderService">
+        <property name="orderDao" ref="orderDao"/>
+    </bean>
+
+    <!--事务管理器-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dateSource" />
+    </bean>
+
+    <!--配置事务增强-->
+    <tx:advice id="txadvice" transaction-manager="transactionManager">
+        <!--实务操作-->
+        <tx:attributes>
+            <!--设置进行事务操作的方法匹配规则-->
+            <tx:method name="account*" propagation="REQUIRED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--配置aop(切面)-->
+    <aop:config>
+        <aop:pointcut id="accountPointcut" expression="execution(* com.ljj.service.OrderService.*(..))" />
+        <aop:advisor advice-ref="txadvice" pointcut-ref="accountPointcut" />
+    </aop:config>
+
+    <!--开启事务管理器(注解式事务)-->
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <!--创建bean-->
+    <bean id="testOrderDao" class="com.ljj.dao.TestOrderDao">
+        <property name="jdbcTemplate" ref="jdbcTemplate"/>
+    </bean>
+    <bean id="testOrderService" class="com.ljj.service.TestOrderService">
+        <property name="testOrderDao" ref="testOrderDao" />
+    </bean>
 
 </beans>
