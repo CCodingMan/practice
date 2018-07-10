@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context" xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--无参构造创建bean(常用)-->
+    <!--<bean id="student" class="com.ljj.bo.Student"/>-->
+
+    <!--静态工厂创建bean-->
+    <!--<bean id="bean类名称(小写)" class="工厂类路径" factory-method="工厂类方法名称"></bean>-->
+
+    <!--实例工厂创建bean-->
+    <!--<bean id="工厂类名称(小写)" class="工厂类路径"></bean>-->
+    <!--<bean id="bean类名称(小写)" factory-bean="工厂类名称(小写)" factory-method="工厂类方法名称"></bean>-->
+
+    <!--有参构造注入属性-->
+    <!--<bean id="testbo" class="com.ljj.bo.TestBO">-->
+        <!--<constructor-arg name="no" value="1" />-->
+        <!--<constructor-arg name="name" value="赵一" />-->
+    <!--</bean>-->
+
+    <!--set方法注入属性(常用)-->
+    <!--<bean id="testbo" class="com.ljj.bo.TestBO">-->
+        <!--<property name="no" value="2" />-->
+        <!--<property name="name" value="钱二" />-->
+    <!--</bean>-->
+
+    <!--对象类型注入属性(常用)-->
+    <!--<bean id="teacher" class="com.ljj.bo.Teacher">-->
+        <!--<property name="no" value="1"/>-->
+        <!--<property name="name" value="张三"/>-->
+    <!--</bean>-->
+    <!--<bean id="student" class="com.ljj.bo.Student">-->
+        <!--<property name="no" value="1"/>-->
+        <!--<property name="age" value="18"/>-->
+        <!--<property name="name" value="张三"/>-->
+        <!--<property name="teacher" ref="teacher"/>-->
+    <!--</bean>-->
+
+    <!--p名称空间注入属性(须在当前xml文件头添加名称空间)-->
+    <!--<bean id="teacher" class="com.ljj.bo.Teacher" p:name="熊大" p:no="2"/>-->
+
+    <!--复杂类型注入属性-->
+    <!--<bean id="complexAttrInject" class="com.ljj.bo.TestComplexAttrInject">-->
+        <!--&lt;!&ndash;数组&ndash;&gt;-->
+        <!--<property name="array">-->
+            <!--<list>-->
+                <!--<value>a</value>-->
+                <!--<value>b</value>-->
+                <!--<value>c</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--&lt;!&ndash;list&ndash;&gt;-->
+        <!--<property name="list">-->
+            <!--<list>-->
+                <!--<value>d</value>-->
+                <!--<value>e</value>-->
+                <!--<value>f</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--&lt;!&ndash;map&ndash;&gt;-->
+        <!--<property name="map">-->
+            <!--<map>-->
+                <!--<entry key="g" value="1"/>-->
+                <!--<entry key="h" value="2"/>-->
+                <!--<entry key="i" value="3"/>-->
+            <!--</map>-->
+        <!--</property>-->
+        <!--&lt;!&ndash;propertis&ndash;&gt;-->
+        <!--<property name="properties">-->
+            <!--<props>-->
+                <!--<prop key="j">4</prop>-->
+                <!--<prop key="k">5</prop>-->
+                <!--<prop key="l">6</prop>-->
+            <!--</props>-->
+        <!--</property>-->
+
+    <!--</bean>-->
+
+    <!--注解创建bean(常用)-->
+    <!--开启注解扫描（类，方法，属性）-->
+    <context:component-scan base-package="com.ljj"/>
+
+    <!--若开启则只扫描属性-->
+    <!--<context:annotation-config></context:annotation-config>-->
+
+</beans>
