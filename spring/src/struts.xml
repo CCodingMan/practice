@@ -7,5 +7,7 @@
 <struts>
     <package name="spring" extends="struts-default" namespace="/">
         <action name="userAction" class="com.ljj.action.UserAction"></action>
+        <!--spring整合struts2(action有Spring创建，struts2引入就行了,class属性值为Spring中bean的id值)-->
+        <action name="animalAction" class="animalAction" />
     </package>
 </struts>

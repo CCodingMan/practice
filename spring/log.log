@@ -1,10 +1,224 @@
-2018-07-11 00:19:16  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5a39699c: startup date [Wed Jul 11 00:19:16 CST 2018]; root of context hierarchy
-2018-07-11 00:19:16  [ main:123 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContent.xml]
-2018-07-11 00:19:17  [ MLog-Init-Reporter:959 ] - [ INFO ]  MLog clients using log4j logging.
-2018-07-11 00:19:18  [ main:1712 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
-2018-07-11 00:19:18  [ main:2290 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge1609w10wed4zmlv86g|117159c0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge1609w10wed4zmlv86g|117159c0, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql:///test, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
-2018-07-11 00:20:14  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@5a39699c: startup date [Wed Jul 11 00:20:14 CST 2018]; root of context hierarchy
-2018-07-11 00:20:14  [ main:110 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContent.xml]
-2018-07-11 00:20:15  [ MLog-Init-Reporter:1254 ] - [ INFO ]  MLog clients using log4j logging.
-2018-07-11 00:20:16  [ main:1871 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
-2018-07-11 00:20:16  [ main:2217 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge1609w10wflz6jwtd4x|117159c0, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge1609w10wflz6jwtd4x|117159c0, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql:///test, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-07-12 16:34:05  [ RMI TCP Connection(3)-127.0.0.1:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2018-07-12 16:34:05  [ RMI TCP Connection(3)-127.0.0.1:107 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Thu Jul 12 16:34:05 CST 2018]; root of context hierarchy
+2018-07-12 16:34:05  [ RMI TCP Connection(3)-127.0.0.1:159 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContent.xml]
+2018-07-12 16:34:06  [ RMI TCP Connection(3)-127.0.0.1:499 ] - [ INFO ]  Loading XML bean definitions from class path resource [animal.xml]
+2018-07-12 16:34:06  [ MLog-Init-Reporter:779 ] - [ INFO ]  MLog clients using log4j logging.
+2018-07-12 16:34:06  [ RMI TCP Connection(3)-127.0.0.1:828 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-07-12 16:34:10  [ RMI TCP Connection(3)-127.0.0.1:4804 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge1609w13antz91rd59ft|42a69b69, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge1609w13antz91rd59ft|42a69b69, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql:///test, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:6639 ] - [ INFO ]  Using DataSource [com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge1609w13antz91rd59ft|42a69b69, dataSourceName -> 1hge1609w13antz91rd59ft|42a69b69 ]] of Hibernate SessionFactory for HibernateTransactionManager
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:6791 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 6771 ms
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7155 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7229 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7236 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7239 ] - [ INFO ]  Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7239 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7239 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7239 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7240 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7241 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7241 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7241 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7242 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7242 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7242 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7243 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7243 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7244 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7244 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7245 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7245 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7245 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7246 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7246 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7246 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7246 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7247 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7247 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7247 ] - [ INFO ]  Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7247 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7248 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7249 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7249 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7249 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7250 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7250 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7250 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.util.ContentTypeMatcher)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7251 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7251 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7251 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7251 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7252 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7252 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7252 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker)
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7265 ] - [ INFO ]  Initializing Struts-Spring integration...
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7266 ] - [ INFO ]  Setting autowire strategy to name
+2018-07-12 16:34:12  [ RMI TCP Connection(3)-127.0.0.1:7266 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2018-07-12 16:35:26  [ localhost-startStop-2:81287 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Thu Jul 12 16:34:05 CST 2018]; root of context hierarchy
+2018-07-12 16:36:32  [ RMI TCP Connection(3)-127.0.0.1:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2018-07-12 16:36:32  [ RMI TCP Connection(3)-127.0.0.1:69 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Thu Jul 12 16:36:32 CST 2018]; root of context hierarchy
+2018-07-12 16:36:32  [ RMI TCP Connection(3)-127.0.0.1:116 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContent.xml]
+2018-07-12 16:36:32  [ RMI TCP Connection(3)-127.0.0.1:243 ] - [ INFO ]  Loading XML bean definitions from class path resource [animal.xml]
+2018-07-12 16:36:32  [ MLog-Init-Reporter:505 ] - [ INFO ]  MLog clients using log4j logging.
+2018-07-12 16:36:32  [ RMI TCP Connection(3)-127.0.0.1:552 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-07-12 16:36:34  [ RMI TCP Connection(3)-127.0.0.1:2572 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge1609w13aqyyxqz38s9|18641eac, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge1609w13aqyyxqz38s9|18641eac, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql:///test, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-07-12 16:36:35  [ RMI TCP Connection(3)-127.0.0.1:3632 ] - [ INFO ]  Using DataSource [com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge1609w13aqyyxqz38s9|18641eac, dataSourceName -> 1hge1609w13aqyyxqz38s9|18641eac ]] of Hibernate SessionFactory for HibernateTransactionManager
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:3779 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 3775 ms
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:3975 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4035 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4043 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4045 ] - [ INFO ]  Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4045 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4046 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4046 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4047 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4048 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4049 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4049 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4049 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4049 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4050 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4050 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4050 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4051 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4051 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4052 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4052 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4052 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4053 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4053 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4054 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4054 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4054 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4055 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4055 ] - [ INFO ]  Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4055 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4057 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4057 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4057 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4058 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4058 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4058 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4059 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.util.ContentTypeMatcher)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4059 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4059 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4059 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4060 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4060 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4060 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4061 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker)
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4078 ] - [ INFO ]  Initializing Struts-Spring integration...
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4078 ] - [ INFO ]  Setting autowire strategy to name
+2018-07-12 16:36:36  [ RMI TCP Connection(3)-127.0.0.1:4078 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2018-07-12 16:37:06  [ localhost-startStop-2:33953 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Thu Jul 12 16:36:32 CST 2018]; root of context hierarchy
+2018-07-12 16:37:24  [ RMI TCP Connection(3)-127.0.0.1:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2018-07-12 16:37:24  [ RMI TCP Connection(3)-127.0.0.1:73 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Thu Jul 12 16:37:24 CST 2018]; root of context hierarchy
+2018-07-12 16:37:24  [ RMI TCP Connection(3)-127.0.0.1:123 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContent.xml]
+2018-07-12 16:37:24  [ RMI TCP Connection(3)-127.0.0.1:242 ] - [ INFO ]  Loading XML bean definitions from class path resource [animal.xml]
+2018-07-12 16:37:25  [ MLog-Init-Reporter:499 ] - [ INFO ]  MLog clients using log4j logging.
+2018-07-12 16:37:25  [ RMI TCP Connection(3)-127.0.0.1:544 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-07-12 16:37:26  [ RMI TCP Connection(3)-127.0.0.1:2448 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge1609w13as3bu11zc9gi|43ea1834, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge1609w13as3bu11zc9gi|43ea1834, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql:///test, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3510 ] - [ INFO ]  Using DataSource [com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge1609w13as3bu11zc9gi|43ea1834, dataSourceName -> 1hge1609w13as3bu11zc9gi|43ea1834 ]] of Hibernate SessionFactory for HibernateTransactionManager
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3651 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 3646 ms
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3850 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3911 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3918 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3921 ] - [ INFO ]  Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3921 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3921 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3922 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3923 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3923 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3923 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3924 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3924 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3924 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3924 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3925 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3925 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3925 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3925 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3925 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3925 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3926 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3926 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3926 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3926 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3927 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3927 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3927 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3927 ] - [ INFO ]  Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3928 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3929 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3929 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3929 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3930 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3930 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3930 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3930 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.util.ContentTypeMatcher)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3931 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3931 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3932 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3932 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3933 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3933 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3933 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker)
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3948 ] - [ INFO ]  Initializing Struts-Spring integration...
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3948 ] - [ INFO ]  Setting autowire strategy to name
+2018-07-12 16:37:28  [ RMI TCP Connection(3)-127.0.0.1:3949 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2018-07-12 16:37:47  [ localhost-startStop-2:22492 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Thu Jul 12 16:37:24 CST 2018]; root of context hierarchy
+2018-07-12 16:38:29  [ RMI TCP Connection(3)-127.0.0.1:0 ] - [ INFO ]  Root WebApplicationContext: initialization started
+2018-07-12 16:38:29  [ RMI TCP Connection(3)-127.0.0.1:105 ] - [ INFO ]  Refreshing Root WebApplicationContext: startup date [Thu Jul 12 16:38:29 CST 2018]; root of context hierarchy
+2018-07-12 16:38:29  [ RMI TCP Connection(3)-127.0.0.1:151 ] - [ INFO ]  Loading XML bean definitions from class path resource [applicationContent.xml]
+2018-07-12 16:38:29  [ RMI TCP Connection(3)-127.0.0.1:270 ] - [ INFO ]  Loading XML bean definitions from class path resource [animal.xml]
+2018-07-12 16:38:29  [ MLog-Init-Reporter:521 ] - [ INFO ]  MLog clients using log4j logging.
+2018-07-12 16:38:29  [ RMI TCP Connection(3)-127.0.0.1:568 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2018-07-12 16:38:31  [ RMI TCP Connection(3)-127.0.0.1:2382 ] - [ INFO ]  Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 1hge1609w13athbl4kd0a7|18641eac, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> 1hge1609w13athbl4kd0a7|18641eac, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql:///test, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 15, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2018-07-12 16:38:32  [ RMI TCP Connection(3)-127.0.0.1:3459 ] - [ INFO ]  Using DataSource [com.mchange.v2.c3p0.ComboPooledDataSource[ identityToken -> 1hge1609w13athbl4kd0a7|18641eac, dataSourceName -> 1hge1609w13athbl4kd0a7|18641eac ]] of Hibernate SessionFactory for HibernateTransactionManager
+2018-07-12 16:38:32  [ RMI TCP Connection(3)-127.0.0.1:3599 ] - [ INFO ]  Root WebApplicationContext: initialization completed in 3586 ms
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3793 ] - [ INFO ]  Parsing configuration file [struts-default.xml]
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3854 ] - [ INFO ]  Parsing configuration file [struts-plugin.xml]
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3860 ] - [ INFO ]  Parsing configuration file [struts.xml]
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3863 ] - [ INFO ]  Choosing bean (spring) for (com.opensymphony.xwork2.ObjectFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3863 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ActionFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3863 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ResultFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3863 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ConverterFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3864 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.InterceptorFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3865 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.ValidatorFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3865 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.factory.UnknownHandlerFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3866 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.FileManagerFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3866 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.XWorkConverter)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3866 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.CollectionConverter)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3866 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.ArrayConverter)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3867 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.DateConverter)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3867 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.NumberConverter)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3867 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.impl.StringConverter)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3868 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionPropertiesProcessor)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3868 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionFileProcessor)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3868 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ConversionAnnotationProcessor)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3869 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterCreator)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3869 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.TypeConverterHolder)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3869 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.TextProvider)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3870 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.LocaleProvider)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3870 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.ActionProxyFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3871 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.conversion.ObjectTypeDeterminer)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3871 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.mapper.ActionMapper)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3871 ] - [ INFO ]  Choosing bean (jakarta) for (org.apache.struts2.dispatcher.multipart.MultiPartRequest)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3872 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.freemarker.FreemarkerManager)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3873 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.components.UrlRenderer)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3873 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.validator.ActionValidatorManager)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3873 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.ValueStackFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3874 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionProvider)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3874 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.reflection.ReflectionContextFactory)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3874 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.PatternMatcher)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3875 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.util.ContentTypeMatcher)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3875 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.StaticContentLoader)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3875 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.UnknownHandlerManager)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3875 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.views.util.UrlHelper)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3875 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.util.TextParser)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3876 ] - [ INFO ]  Choosing bean (struts) for (org.apache.struts2.dispatcher.DispatcherErrorHandler)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3876 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.ExcludedPatternsChecker)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3876 ] - [ INFO ]  Choosing bean (struts) for (com.opensymphony.xwork2.security.AcceptedPatternsChecker)
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3889 ] - [ INFO ]  Initializing Struts-Spring integration...
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3890 ] - [ INFO ]  Setting autowire strategy to name
+2018-07-12 16:38:33  [ RMI TCP Connection(3)-127.0.0.1:3890 ] - [ INFO ]  ... initialized Struts-Spring integration successfully
+2018-07-12 16:48:56  [ localhost-startStop-2:627664 ] - [ INFO ]  Closing Root WebApplicationContext: startup date [Thu Jul 12 16:38:29 CST 2018]; root of context hierarchy
