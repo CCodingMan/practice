@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!--suppress ALL -->
+<hibernate-mapping>
+    <!--配置类和表对应-->
+    <class name="com.ljj.bo.Car" table="t_car">
+        <!--配置类id和表id对应-->
+        <id column="id" name="id">
+            <generator class="native" />
+        </id>
+        <!--其他属性-->
+        <property name="name" column="name" />
+        <property name="price" column="price" />
+    </class>
+</hibernate-mapping>
