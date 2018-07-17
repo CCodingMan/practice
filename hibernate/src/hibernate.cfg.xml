@@ -41,6 +41,10 @@
 
         <!--把映射文件放到核心配置文件中,引入映射文件(基于xml配置文件)-->
         <mapping resource="com/ljj/bo/Car.hbm.xml" />
+        <mapping resource="com/ljj/bo/Customer.hbm.xml" />
+        <mapping resource="com/ljj/bo/LinkMan.hbm.xml" />
+        <mapping resource="com/ljj/bo/User.hbm.xml" />
+        <mapping resource="com/ljj/bo/Role.hbm.xml" />
 
         <!--基于注解的配置映射实体类数据库表-->
         <mapping class="com.ljj.bo.Watch" />

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!--suppress ALL -->
+<hibernate-mapping>
+    <!--配置类和表对应-->
+    <class name="com.ljj.bo.Customer" table="t_customer">
+        <!--配置类id和表id对应-->
+        <id column="cid" name="cid">
+            <generator class="native" />
+        </id>
+        <!--其他属性-->
+        <property name="custName" column="custName" />
+        <property name="custLevel" column="custLevel" />
+        <property name="custSource" column="custSource" />
+        <property name="custPhone" column="custPhone" />
+        <property name="custMobile" column="custMobile" />
+
+        <!--在客户映射文件中，表示所有联系人，使用set标签表示所有联系人,
+        set标签里的name属性是客户实体类中表示联系人的set集合名称
+        cascade:save_update级联保存更新,delete级联删除
+        inverse:false(默认)维护关系，true放弃维护关系
+        -->
+        <set name="setLinkMan" cascade="save-update,delete" inverse="true">
+            <!--hibernate机制，一对多双向维护外键，在一和多那一方都要配置外键，
+            column属性值为外键名称
+            -->
+            <key column="cid"></key>
+            <!--客户所有的联系人，class属性值为联系人实体类全路径-->
+            <one-to-many class="com.ljj.bo.LinkMan" />
+        </set>
+        
+    </class>
+</hibernate-mapping>

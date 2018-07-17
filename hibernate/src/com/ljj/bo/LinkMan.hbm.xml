@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!--suppress ALL -->
+<hibernate-mapping>
+    <!--配置类和表对应-->
+    <class name="com.ljj.bo.LinkMan" table="t_linkman">
+        <!--配置类id和表id对应-->
+        <id column="lkm_id" name="lkm_id">
+            <generator class="native" />
+        </id>
+        <!--其他属性-->
+        <property name="lkm_name" column="lkm_name" />
+        <property name="lkm_gender" column="lkm_gender" />
+        <property name="lkm_phone" column="lkm_phone" />
+
+        <!--表示联系人所属客户
+        name属性为联系人实体类中customer名称，
+        class属性为customer全路径
+        clolumn属性为外键名称
+        -->
+        <many-to-one name="customer" class="com.ljj.bo.Customer" column="cid"></many-to-one>
+
+    </class>
+</hibernate-mapping>
