@@ -436,8 +436,9 @@ public class HibernateTest {
             ts = session.beginTransaction();
 
             Customer customer = session.get(Customer.class, 3);
+            //得到set集合没有发送语句
             Set<LinkMan> setLinkMan = customer.getSetLinkMan();
-
+            //发送语句
             System.out.println(setLinkMan.size());
 
             //（6）提交事务
@@ -521,10 +522,30 @@ public class HibernateTest {
 //            System.out.println(max);
 
             //min
-            Query query = session.createQuery("select min(cid) as min from Customer");
-            int min = (Integer) query.uniqueResult();
-            System.out.println(min);
+//            Query query = session.createQuery("select min(cid) as min from Customer");
+//            int min = (Integer) query.uniqueResult();
+//            System.out.println(min);
 
+            //多表查询
+            //1.内连接
+//            Query query = session.createQuery("from Customer c inner join c.setLinkMan");
+//            List<Object> customers = query.list();
+
+            //2.左连接
+//            Query query = session.createQuery("from Customer c left join c.setLinkMan");
+//            List<Object> customers = query.list();
+
+            //3.右连接
+//            Query query = session.createQuery("from Customer c right join c.setLinkMan");
+//            List<Object> customers = query.list();
+
+            //4.迫切内连接
+//            Query query = session.createQuery("from Customer c left outer join fetch c.setLinkMan");
+//            List<Customer> customers = query.list();
+
+            //5.迫切左连接
+//            Query query = session.createQuery("from Customer c inner join fetch c.setLinkMan");
+//            List<Customer> customers = query.list();
 
 //            for (Customer obj: customers){
 //                System.out.println("customerName: "+obj.getCustName()+",customerLevel: "+obj.getCustLevel());
@@ -562,6 +583,8 @@ public class HibernateTest {
             //1.查询所有客户
             //低版本hibernate
 //            Criteria criteria = session.createQuery(Customer.class);
+//            List<Customer> customers = criteria.list();
+
             //高版本hibernate5.3
 //            CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
 //            CriteriaQuery criteria = criteriaBuilder.createQuery(Customer.class);
@@ -642,6 +665,38 @@ public class HibernateTest {
             for (Customer obj: customers){
                 System.out.println("customerName: "+obj.getCustName()+",customerLevel: "+obj.getCustLevel());
             }
+
+            //（6）提交事务
+            ts.commit();
+        }catch (Exception e){
+            e.printStackTrace();
+            ts.rollback();
+        }finally {
+            session.close();
+            sessionFactory.close();
+        }
+    }
+
+    /**
+     * 检索查询
+     */
+    @Test
+    public void testSearchQuery(){
+        SessionFactory sessionFactory = null;
+        Session session = null;
+        Transaction ts = null;
+        try {
+
+            sessionFactory = HibernateUtil.getSessionFactory();
+            //（3）使用sessionFactory创建session对象
+            session = sessionFactory.openSession();
+            //（4）开启事务
+            ts = session.beginTransaction();
+
+            //load方法调用后不会马上查询（返回对象中只有id），等需要其他属性时才会发出语句查询
+            Customer customer = session.load(Customer.class, 3);
+            System.out.println(customer.getCid());
+            System.out.println(customer.getCustName());
 
             //（6）提交事务
             ts.commit();

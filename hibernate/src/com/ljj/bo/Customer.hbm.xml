@@ -23,7 +23,7 @@
         cascade:save_update级联保存更新,delete级联删除
         inverse:false(默认)维护关系，true放弃维护关系
         -->
-        <set name="setLinkMan" cascade="save-update,delete" inverse="true">
+        <set name="setLinkMan" cascade="save-update,delete" inverse="true" fetch="select" lazy="true" batch-size="10">
             <!--hibernate机制，一对多双向维护外键，在一和多那一方都要配置外键，
             column属性值为外键名称
             -->
