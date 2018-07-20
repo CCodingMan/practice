@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="com.ljj.mapping.userMapper"就是com.ljj.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+ -->
+<mapper namespace="com.ljj.mapping.userMapper">
+    <!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，不能够重复
+    使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
+    resultType="com.ljj.bo.User"就表示将查询结果封装成一个User类的对象返回
+    User类就是users表所对应的实体类
+    -->
+    <!--
+        根据id查询得到一个user对象
+        id是statement的id
+     -->
+    <select id="findUserById" parameterType="int"
+            resultType="com.ljj.bo.User">
+        select * from test.m_user where user_id=#{user_id}
+    </select>
+
+
+    <select id="findUserByUserName" parameterType="java.lang.String" resultType="com.ljj.bo.User">
+        select * from test.m_user where user_name like concat('%',#{user_name},'%')
+    </select>
+    
+    <insert id="insertUser" parameterType="com.ljj.bo.User">
+        <!--获取插入数据后的主键值，只适合于自增主键-->
+        <selectKey keyProperty="user_id" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+
+        insert into test.m_user(user_name, user_pwd) values (#{user_name}, #{user_pwd})
+
+        <!--oracle序列-->
+        <!--<selectKey keyProperty="user_id" order="BEFORE" resultType="java.lang.String">-->
+            <!--select 序列名.next_val()-->
+        <!--</selectKey>-->
+
+        <!--使用mysql的uuid生成主键-->
+        <!--<selectKey keyProperty="user_id" order="BEFORE" resultType="java.lang.String">-->
+            <!--select uuid()-->
+        <!--</selectKey>-->
+
+        <!--insert into test.m_user(user_id, user_name, user_pwd) values (#{user_id}, #{user_name}, #{user_pwd})-->
+
+    </insert>
+
+    <delete id="deleteUserByUserId" parameterType="java.lang.Integer">
+        delete from m_user where user_id = #{user_id}
+    </delete>
+
+    <update id="updateUser" parameterType="com.ljj.bo.User">
+        update m_user set user_name=#{user_name},user_pwd=#{user_pwd} where user_id=#{user_id}
+    </update>
+
+</mapper>

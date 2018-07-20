@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 为这个mapper指定一个唯一的namespace，namespace的值习惯上设置成包名+sql映射文件名，这样就能够保证namespace的值是唯一的
+例如namespace="com.ljj.mapping.userMapper"就是com.ljj.mapping(包名)+userMapper(userMapper.xml文件去除后缀)
+ -->
+<!--suppress SqlDialectInspection -->
+<mapper namespace="com.ljj.mapper.UserMapper">
+
+    <!--sql片段:一般基于单表定义sql片段,在sql片段中不要用where-->
+    <sql id="query_user_where">
+        <if test="userCustom!=null">
+            <if test="userCustom.user_pwd!=null and userCustom.user_pwd!=''">
+                and user_pwd=#{userCustom.user_pwd}
+            </if>
+            <if test="userCustom.user_name!=null and userCustom.user_name!=''">
+                and user_name like concat('%',#{userCustom.user_name},'%')
+            </if>
+        </if>
+        <if test="ids!=null">
+            <foreach collection="ids" item="item_id" open="and user_id in(" close=")" separator=",">
+              #{item_id}
+            </foreach>
+        </if>
+    </sql>
+    
+    <!--使用resultMap映射-->
+    <resultMap id="userResultMap" type="user">
+        <!--id查询结果集中唯一标识-->
+        <id column="userId_" property="user_id"/>
+        <result column="userName_" property="user_name" />
+    </resultMap>
+
+    <!--resultType在其它mapper映射文件中需要加上namespace-->
+    <select id="findUserResultMap" parameterType="userQueryVo" resultType="user" resultMap="userResultMap">
+        select user_id userId_,user_name userName_ from test.m_user
+        where user_name like concat('%',#{userCustom.user_name},'%')
+    </select>
+
+    <!--查询用户信息总数-->
+    <select id="findUserCount" parameterType="userQueryVo" resultType="int">
+        select count(*) from test.m_user where user_name like concat('%',#{userCustom.user_name},'%')
+    </select>
+
+    <!--用户信息综合查询-->
+    <select id="findUserList" parameterType="userQueryVo" resultType="userCustom">
+        select * from test.m_user
+        <where>
+            <!--不在当前文件中的引用需要加引用文件的namespace-->
+            <include refid="query_user_where" />
+        </where>
+    </select>
+
+    <!-- 在select标签中编写查询的SQL语句， 设置select标签的id属性为getUser，id属性值必须是唯一的，不能够重复
+    使用parameterType属性指明查询时使用的参数类型，resultType属性指明查询返回的结果集类型
+    resultType="com.ljj.bo.User"就表示将查询结果封装成一个User类的对象返回
+    User类就是users表所对应的实体类
+    -->
+    <!--
+        根据id查询得到一个user对象
+        id是statement的id
+     -->
+    <select id="findUserById" parameterType="int"
+            resultType="user">
+        select * from test.m_user where user_id=#{user_id}
+    </select>
+
+
+    <select id="findUserByUserName" parameterType="java.lang.String" resultType="user">
+        select * from test.m_user where user_name like concat('%',#{user_name},'%')
+    </select>
+
+    <insert id="insertUser" parameterType="user">
+        <!--获取插入数据后的主键值，只适合于自增主键-->
+        <selectKey keyProperty="user_id" order="AFTER" resultType="java.lang.Integer">
+            select last_insert_id()
+        </selectKey>
+
+        insert into test.m_user(user_name, user_pwd) values (#{user_name}, #{user_pwd})
+
+        <!--oracle序列-->
+        <!--<selectKey keyProperty="user_id" order="BEFORE" resultType="java.lang.String">-->
+        <!--select 序列名.next_val()-->
+        <!--</selectKey>-->
+
+        <!--使用mysql的uuid生成主键-->
+        <!--<selectKey keyProperty="user_id" order="BEFORE" resultType="java.lang.String">-->
+        <!--select uuid()-->
+        <!--</selectKey>-->
+
+        <!--insert into test.m_user(user_id, user_name, user_pwd) values (#{user_id}, #{user_name}, #{user_pwd})-->
+
+    </insert>
+
+    <delete id="deleteUserByUserId" parameterType="java.lang.Integer">
+        delete from m_user where user_id = #{user_id}
+    </delete>
+
+    <update id="updateUser" parameterType="user">
+        update m_user set user_name=#{user_name},user_pwd=#{user_pwd} where user_id=#{user_id}
+    </update>
+
+</mapper>

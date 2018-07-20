@@ -5,7 +5,7 @@
 <hibernate-mapping>
     <class name="com.ljj.bo.User" table="t_user">
         <id name="user_id" column="user_id">
-            <generator class="native"></generator>
+            <generator class="native" />
         </id>
         <property name="user_name" column="user_name" />
         <property name="user_password" column="user_password" />
@@ -13,9 +13,9 @@
         <!--在用户中表示所有角色，使用set标签，name属性角色set集合名称，table属性第三张表名称-->
         <set name="setRole" table="user_role" cascade="save-update,delete">
             <!--当前映射文件在第三张表的外键名称-->
-            <key column="userid"></key>
+            <key column="userid" />
             <!--class:关联实体类全路径 column:关联实体类在第三张表中的外键名称-->
-            <many-to-many class="com.ljj.bo.Role" column="roleid"></many-to-many>
+            <many-to-many class="com.ljj.bo.Role" column="roleid" />
         </set>
     </class>
 </hibernate-mapping>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--suppress SqlDialectInspection -->
+<mapper namespace="com.ljj.mapper.OrdersCustomMapper">
+    <resultMap id="orderResultMap" type="o_orders">
+        <!--若唯一性需有两字段确定，就配置两个id标签-->
+        <id column="id" property="id" />
+        <result column="userId" property="userId" />
+        <result column="number" property="number" />
+        <result column="createTime" property="createTime" />
+        <result column="note" property="note" />
+
+        <association property="user" javaType="com.ljj.bo.O_user">
+            <id property="id" column="userId" />
+            <result property="username" column="username" />
+            <result property="birthday" column="birthday" />
+            <result property="sex" column="sex" />
+            <result property="address" column="address" />
+        </association>
+    </resultMap>
+
+    <resultMap id="orderdetailResultMap" type="o_orders" extends="orderResultMap">
+        <!--ofType:映射到list集合属性中pojo的类型-->
+        <collection property="orderdetails" ofType="com.ljj.bo.O_orderdetail">
+            <id column="orderdetailId" property="id" />
+            <result property="ordersId" column="orders_id" />
+            <result property="itemsId" column="items_id" />
+            <result property="itemsnumber" column="items_num" />
+        </collection>
+    </resultMap>
+
+    <resultMap id="itemsResultMap" type="com.ljj.bo.O_user">
+        <id column="userId" property="id" />
+        <result property="username" column="username" />
+        <result property="sex" column="sex" />
+        <result property="address" column="address" />
+        <collection property="ordersList" ofType="com.ljj.bo.O_orders">
+            <id column="id" property="id" />
+            <result column="userId" property="userId" />
+            <result column="number" property="number" />
+            <result column="createTime" property="createTime" />
+            <result column="note" property="note" />
+            <collection property="orderdetails" ofType="com.ljj.bo.O_orderdetail">
+                <id column="orderdetailId" property="id" />
+                <result property="ordersId" column="orders_id" />
+                <result property="itemsId" column="items_id" />
+                <result property="itemsnumber" column="items_num" />
+                <association property="items" javaType="com.ljj.bo.O_items">
+                    <id property="id" column="itemsId" />
+                    <result property="price" column="price" />
+                </association>
+            </collection>
+        </collection>
+    </resultMap>
+
+    <select id="findUserById" parameterType="int"
+            resultType="o_user">
+        select * from o_user where id=#{id}
+    </select>
+
+    <select id="findOrdersUser" resultType="ordersCustom">
+        select o.*,u.username,u.sex,u.address from o_orders o,o_user u where o.userId=u.id;
+    </select>
+    
+    <select id="findOrdersUserResultMap" resultMap="orderResultMap">
+        select o.*,u.username,u.sex,u.address from o_orders o,o_user u where o.userId=u.id;
+    </select>
+
+    <select id="findOrdersAndOrderdetailResultMap" resultMap="orderdetailResultMap">
+        select o.*,u.username,u.sex,u.address,d.id orderdetailId,d.items_id,d.items_num,d.orders_id
+        from o_orders o,o_user u,o_orderdetail d where o.userId=u.id and o.id=d.orders_id;
+    </select>
+
+    <select id="findOrdersAndItemsResultMap" resultMap="itemsResultMap">
+        select o.*,u.username,u.sex,u.address,d.id orderdetailId
+        ,d.items_id,d.items_num,d.orders_id,i.id itemsId,i.price
+        from o_orders o,o_user u,o_orderdetail d,o_items i
+        where o.userId=u.id and o.id=d.orders_id and i.id=d.items_id;
+    </select>
+
+    <!--延迟加载的resultMap-->
+    <resultMap id="orderUserLazyLoadRresultMap" type="o_orders">
+        <!--对订单信息进行映射配制-->
+        <id column="id" property="id" />
+        <id column="id" property="id" />
+        <result column="userId" property="userId" />
+        <result column="number" property="number" />
+        <result column="createTime" property="createTime" />
+        <result column="note" property="note" />
+        <!--
+            对用户信息延迟加载
+            select属性：指定延迟加载需要执行的statement的id(根据userId查询用户的statement的id)
+            要是用userMapper.xml中的findUserById完成根据用户id查询，不在当前xml文件中要加所在xml的namespace
+            column:订单信息中关联用户信息查询的列（userId）
+            关联查询的sql理解为：
+            select orders.*,(select username from user
+            where orders.userId=user.userId)username
+            from orders
+        -->
+        <association property="user" select="findUserById" javaType="o_user" column="userId">
+        </association>
+    </resultMap>
+
+    <!--查询订单关联信息-->
+    <select id="findOrderUserLazyLoad" resultMap="orderUserLazyLoadRresultMap">
+        select * from o_orders
+    </select>
+
+</mapper>
