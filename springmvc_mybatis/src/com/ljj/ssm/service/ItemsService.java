@@ -1,6 +1,5 @@
 package com.ljj.ssm.service;
 
-import com.ljj.ssm.po.Items;
 import com.ljj.ssm.po.ItemsCustom;
 import com.ljj.ssm.po.ItemsQueryVo;
 

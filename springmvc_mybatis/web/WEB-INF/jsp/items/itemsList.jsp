@@ -6,7 +6,7 @@
     <title>查询商品列表</title>
 </head>
 <body>
-<form action="${pageContext.request.contextPath}/queryItems.action" method="post">
+<form action="${pageContext.request.contextPath}/items/queryItems.action" method="post">
     查询条件：
     <table width="100%" border="1">
         <tr>
@@ -29,7 +29,7 @@
             <td>${item.price}</td>
             <td><fmt:formatDate value="${item.createtime}" pattern="yyyy_MM-dd HH:mm:ss"/> </td>
             <td>${item.detail}</td>
-            <td><a href="${pageContext.request.contextPath}/editItems.action?id=${item.id}">修改</a></td>
+            <td><a href="${pageContext.request.contextPath}/items/editItems.action?id=${item.id}">修改</a></td>
         </tr>
     </c:forEach>
 </table>

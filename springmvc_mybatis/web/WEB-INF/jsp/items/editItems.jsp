@@ -8,7 +8,7 @@
     <title>修改商品信息</title>
 </head>
 <body>
-    <form id="itemForm" action="${pageContext.request.contextPath}/editItemsSubmit.action" method="post" enctype="multipart/form-data">
+    <form id="itemForm" action="${pageContext.request.contextPath}/items/editItemsSubmit2.action" method="post">
         <input type="hidden" name="id" value="${itemsCustom.id}"/>
         修改商品信息：
         <table width="100%" border="1">
