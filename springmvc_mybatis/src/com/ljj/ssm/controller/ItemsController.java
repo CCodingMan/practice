@@ -1,11 +1,16 @@
 package com.ljj.ssm.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.ljj.ssm.controller.validation.ValidGroup;
 import com.ljj.ssm.po.ItemsCustom;
+import com.ljj.ssm.po.ItemsQueryVo;
 import com.ljj.ssm.service.ItemsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -29,9 +34,9 @@ public class ItemsController {
 
     //建议方法名和注解名称保持一致
     @RequestMapping(value = "/queryItems", method = {RequestMethod.POST,RequestMethod.GET})
-    public ModelAndView queryItems() throws Exception{
+    public ModelAndView queryItems(ItemsQueryVo itemsQueryVo) throws Exception{
 
-        List<ItemsCustom> itemsList = itemsService.findItemsList(null);
+        List<ItemsCustom> itemsList = itemsService.findItemsList(itemsQueryVo);
 
         //设置数据模型
         ModelAndView modelAndView = new ModelAndView();
@@ -69,16 +74,23 @@ public class ItemsController {
         return "items/editItems";
     }
 
+    //@Validated(value = {ValidGroup.class})指定使用此分组校验
     @RequestMapping(value = "/editItemsSubmit", method = {RequestMethod.POST,RequestMethod.GET})
-    public ModelAndView editItemsSubmit(Integer id, ItemsCustom itemsCustom) throws Exception{
+    public String editItemsSubmit(Model model, Integer id, @Validated(value = {ValidGroup.class}) ItemsCustom itemsCustom, BindingResult bindingResult) throws Exception{
+        //方法参数中的@Validated和BindingResult bindingResult是配对出现的(一前一后)
+        //获取校验错误信息
+        if (bindingResult.hasErrors()){
+            //输出错误信息
+            List<ObjectError> allError = bindingResult.getAllErrors();
+            for (ObjectError obj: allError){
+                System.out.println(obj.getDefaultMessage());
+            }
+            //将错误信息传到页面
+            model.addAttribute("allErrors",allError);
+            return "items/error";
+        }
 
-        //设置数据模型
-        ModelAndView modelAndView = new ModelAndView();
-
-        //指定视图
-        modelAndView.setViewName("success");
-
-        return modelAndView;
+        return "success";
     }
 
     @RequestMapping(value = "/editItemsSubmit2", method = {RequestMethod.POST,RequestMethod.GET})
@@ -114,4 +126,31 @@ public class ItemsController {
         response.sendRedirect("queryItems.action");
     }
 
+    @RequestMapping(value = "/deleteItems", method = {RequestMethod.POST,RequestMethod.GET})
+    public String deleteItems(Integer[] items_id) throws Exception{
+
+        return "success";
+    }
+
+    //查询批量商品
+    @RequestMapping(value = "/editItemsQuery", method = {RequestMethod.POST,RequestMethod.GET})
+    public ModelAndView editItemsQuery(ItemsQueryVo itemsQueryVo) throws Exception{
+
+        List<ItemsCustom> itemsList = itemsService.findItemsList(itemsQueryVo);
+
+        //设置数据模型
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("itemsList",itemsList);
+
+        //指定视图
+        modelAndView.setViewName("items/editItemsQuery");
+
+        return modelAndView;
+    }
+
+    @RequestMapping(value = "/editItemsAllSubmit", method = {RequestMethod.POST,RequestMethod.GET})
+    public String editItemsAllSubmit(ItemsQueryVo itemsQueryVo) throws Exception{
+
+        return "success";
+    }
 }

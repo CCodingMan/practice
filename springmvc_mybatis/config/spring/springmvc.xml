@@ -26,7 +26,7 @@
         RequestMappingHandlerMapping和HttpRequestHandlerAdapter
         mvc:annotation-driven默认加载了很多参数绑定方法，如json转换解析等，实际开发中使用此注解
     -->
-    <mvc:annotation-driven conversion-service="conversionService"/>
+    <mvc:annotation-driven conversion-service="conversionService" validator="validator"/>
 
     <!-- 自定义参数绑定 -->
     <bean id="conversionService" class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
@@ -43,6 +43,27 @@
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/jsp/" />
         <property name="suffix" value=".jsp" />
+    </bean>
+
+    <!-- 校验器 -->
+    <bean id="validator" class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+        <!-- hibernate校验器 -->
+        <property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+        <!-- 指定校验器使用的资源文件，在文件中配置校验错误信息，不指定则默认为classpath下的ValidationMessage.properties -->
+        <property name="validationMessageSource" ref="messageSource"/>
+    </bean>
+    <!-- 校验错误信息配置文件 -->
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <!-- 资源文件名 -->
+        <property name="basenames">
+            <list>
+                <value>customValidationMessages</value>
+            </list>
+        </property>
+        <!-- 资源文件编码格式 -->
+        <property name="fileEncodings" value="utf-8"/>
+        <!-- 对资源文件内容缓存时间，单位秒 -->
+        <property name="cacheSeconds" value="120"/>
     </bean>
 
 </beans>

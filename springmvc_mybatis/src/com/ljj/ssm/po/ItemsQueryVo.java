@@ -1,5 +1,7 @@
 package com.ljj.ssm.po;
 
+import java.util.List;
+
 /**
  * @Auther: ljj
  * @Date: 2018/8/2 18:19
@@ -8,6 +10,7 @@ package com.ljj.ssm.po;
 public class ItemsQueryVo {
     private Items items;
     private ItemsCustom itemsCustom;
+    private List<ItemsCustom> itemList;
 
     public Items getItems() {
         return items;
@@ -23,5 +26,13 @@ public class ItemsQueryVo {
 
     public void setItemsCustom(ItemsCustom itemsCustom) {
         this.itemsCustom = itemsCustom;
+    }
+
+    public List<ItemsCustom> getItemList() {
+        return itemList;
+    }
+
+    public void setItemList(List<ItemsCustom> itemList) {
+        this.itemList = itemList;
     }
 }
