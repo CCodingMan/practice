@@ -1554,8 +1554,6 @@ public final class StringHelper {
 	 * @param str
 	 *            要进行处理的字符串
 	 * @return 转换后的字符串
-	 * @see fs_com.utils.CTools#toChinese
-	 * @see fs_com.utils.CTools#null2Blank
 	 */
 	public static String toChineseAndHtmlEncode(String str, int quotes) {
 		try {

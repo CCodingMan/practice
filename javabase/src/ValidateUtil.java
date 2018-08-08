@@ -489,8 +489,7 @@ public class ValidateUtil {
     /** 
      * 大小写敏感的正规表达式批配 
      *  
-     * @param source 
-     *            批配的源字符串 
+     * @param str 批配的源字符串
      * @param regexp 
      *            批配的正规表达式 
      * @return 如果源字符串符合要求返回真,否则返回假 

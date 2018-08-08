@@ -120,7 +120,7 @@ public class FastJsonUtil {
 	/**
 	 * 将javabean转化为序列化的JSONObject对象
 	 * 
-	 * @param keyvalue
+	 * @param
 	 * @return
 	 */
 	public static JSONObject beanToJsonObj(Object bean) {
@@ -131,7 +131,7 @@ public class FastJsonUtil {
 	/**
 	 * json字符串转化为map
 	 * 
-	 * @param s
+	 * @param
 	 * @return
 	 */
 	public static Map<?, ?> stringToCollect(String jsonStr) {
@@ -142,7 +142,7 @@ public class FastJsonUtil {
 	/**
 	 * 将map转化为string
 	 * 
-	 * @param m
+	 * @param
 	 * @return
 	 */
 	public static String collectToString(Map<?, ?> map) {

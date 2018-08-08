@@ -603,8 +603,7 @@ public class FileHelper {
 	 *            需要写的文件的路径
 	 * @param data
 	 *            需要写入的字串
-	 * @param dncoding
-	 *            文件编码，默认为GBK
+	 * @param encoding 文件编码默认为GBK
 	 * @return true:写入成功 false:写入失败
 	 */
 	public static boolean writeToFile(String file, String data, String encoding) {
@@ -782,8 +781,7 @@ public class FileHelper {
     /** 
      * 删除文件/目录(递归删除文件/目录) 
      *  
-     * @param path 
-     *            文件或文件夹的绝对路径 
+     * @param dirpath 文件或文件夹的绝对路径
      */  
     public void deleteAll(String dirpath) {  
         if (dirpath == null) {  

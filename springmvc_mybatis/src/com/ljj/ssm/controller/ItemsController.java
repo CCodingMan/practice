@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,7 +19,9 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Auther: ljj
@@ -31,6 +34,15 @@ import java.util.List;
 public class ItemsController {
     @Autowired
     private ItemsService itemsService;
+
+    //itemtypes表示最终方法的返回值放在request中的key
+    @ModelAttribute("itemtypes")
+    public Map<String, String> getItemTypes(){
+        Map<String, String> itemTypes = new HashMap<>();
+        itemTypes.put("101","数码");
+        itemTypes.put("102","母婴");
+        return itemTypes;
+    }
 
     //建议方法名和注解名称保持一致
     @RequestMapping(value = "/queryItems", method = {RequestMethod.POST,RequestMethod.GET})
@@ -75,8 +87,11 @@ public class ItemsController {
     }
 
     //@Validated(value = {ValidGroup.class})指定使用此分组校验
+    //@ModelAttribute("items")指定回显数据的key为items
     @RequestMapping(value = "/editItemsSubmit", method = {RequestMethod.POST,RequestMethod.GET})
-    public String editItemsSubmit(Model model, Integer id, @Validated(value = {ValidGroup.class}) ItemsCustom itemsCustom, BindingResult bindingResult) throws Exception{
+    public String editItemsSubmit(Model model, Integer id
+            , @Validated(value = {ValidGroup.class}) ItemsCustom itemsCustom
+            , BindingResult bindingResult) throws Exception{
         //方法参数中的@Validated和BindingResult bindingResult是配对出现的(一前一后)
         //获取校验错误信息
         if (bindingResult.hasErrors()){
@@ -87,6 +102,8 @@ public class ItemsController {
             }
             //将错误信息传到页面
             model.addAttribute("allErrors",allError);
+            //model回显
+            model.addAttribute("items",itemsCustom);
             return "items/error";
         }
 

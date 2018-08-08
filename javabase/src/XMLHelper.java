@@ -302,8 +302,7 @@ public final class XMLHelper {
 	 *
 	 * @param doc
 	 *            要保存的XML文档对象.
-	 * @param filePath
-	 *            要保存到的文档路径.
+	 * @param filePathName 要保存到的文档路径.
 	 * @param format
 	 *            要保存的输出格式
 	 * @return true代表保存成功，否则代表不成功.
@@ -334,8 +333,7 @@ public final class XMLHelper {
 	/**
 	 * 将一个XML文档保存至文件中.
 	 *
-	 * @param filePath
-	 *            要保存到的文档路径.
+	 * @param filePathName 要保存到的文档路径.
 	 * @param doc
 	 *            要保存的XML文档对象.
 	 * @return true代表保存成功，否则代表不成功.
