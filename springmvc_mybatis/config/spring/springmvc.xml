@@ -66,4 +66,7 @@
         <property name="cacheSeconds" value="120"/>
     </bean>
 
+    <!-- 全局异常处理器 -->
+    <bean class="com.ljj.ssm.exception.CustomExceptionResolver"></bean>
+
 </beans>

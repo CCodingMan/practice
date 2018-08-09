@@ -9,8 +9,14 @@
 </head>
 <body>
 <!-- 显示错误信息 -->
-<c:forEach items="${allErrors }" var="error">
-    ${error.defaultMessage}<br/>
-</c:forEach>
+<c:if test="${allErrors} != null">
+    <c:forEach items="${allErrors }" var="error">
+        ${error.defaultMessage}<br/>
+    </c:forEach>
+</c:if>
+
+<c:if test="${message} != null">
+    ${message}
+</c:if>
 </body>
 </html>
