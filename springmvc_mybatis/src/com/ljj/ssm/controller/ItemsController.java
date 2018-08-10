@@ -2,6 +2,7 @@ package com.ljj.ssm.controller;
 
 import com.alibaba.fastjson.JSON;
 import com.ljj.ssm.controller.validation.ValidGroup;
+import com.ljj.ssm.exception.CustomException;
 import com.ljj.ssm.po.ItemsCustom;
 import com.ljj.ssm.po.ItemsQueryVo;
 import com.ljj.ssm.service.ItemsService;
@@ -76,9 +77,13 @@ public class ItemsController {
     }
 
     @RequestMapping(value = "/editItems2", method = {RequestMethod.POST,RequestMethod.GET})
-    public String editItems2(Model model) throws Exception{
+    public String editItems2(Model model,@RequestParam(value = "id",required = true) Integer id) throws Exception{
 
-        ItemsCustom itemsCustom = itemsService.selectByPrimaryKey(1);
+        ItemsCustom itemsCustom = itemsService.selectByPrimaryKey(id);
+
+        if(itemsCustom == null){
+            throw new CustomException("修改的商品信息不存在");
+        }
 
         //设置数据模型
         model.addAttribute("itemsCustom",itemsCustom);

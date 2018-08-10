@@ -1,5 +1,6 @@
 package com.ljj.ssm.service.impl;
 
+import com.ljj.ssm.exception.CustomException;
 import com.ljj.ssm.mapper.ItemsMapper;
 import com.ljj.ssm.mapper.ItemsMapperCustom;
 import com.ljj.ssm.po.Items;
@@ -31,12 +32,17 @@ public class ItemsServiceImpl implements ItemsService {
     @Override
     public ItemsCustom selectByPrimaryKey(Integer id) throws Exception {
         Items items = itemsMapper.selectByPrimaryKey(id);
-
+        if(items == null){
+            throw new CustomException("商品不存在");
+        }
         //其他处理。。。
 
-        ItemsCustom itemsCustom = new ItemsCustom();
-        //把items的属性值拷贝到itemsCustom中
-        BeanUtils.copyProperties(items, itemsCustom);
+        ItemsCustom itemsCustom = null;
+        if(items != null){
+            itemsCustom = new ItemsCustom();
+            //把items的属性值拷贝到itemsCustom中
+            BeanUtils.copyProperties(items, itemsCustom);
+        }
 
         return itemsCustom;
     }
