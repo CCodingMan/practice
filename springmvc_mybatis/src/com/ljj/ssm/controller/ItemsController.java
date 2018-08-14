@@ -16,13 +16,17 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.awt.font.MultipleMaster;
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @Auther: ljj
@@ -96,20 +100,38 @@ public class ItemsController {
     @RequestMapping(value = "/editItemsSubmit", method = {RequestMethod.POST,RequestMethod.GET})
     public String editItemsSubmit(Model model, Integer id
             , @Validated(value = {ValidGroup.class}) ItemsCustom itemsCustom
-            , BindingResult bindingResult) throws Exception{
+            , BindingResult bindingResult, MultipartFile items_pic) throws Exception{
         //方法参数中的@Validated和BindingResult bindingResult是配对出现的(一前一后)
         //获取校验错误信息
-        if (bindingResult.hasErrors()){
-            //输出错误信息
-            List<ObjectError> allError = bindingResult.getAllErrors();
-            for (ObjectError obj: allError){
-                System.out.println(obj.getDefaultMessage());
-            }
-            //将错误信息传到页面
-            model.addAttribute("allErrors",allError);
-            //model回显
-            model.addAttribute("items",itemsCustom);
-            return "items/error";
+//        if (bindingResult.hasErrors()){
+//            //输出错误信息
+//            List<ObjectError> allError = bindingResult.getAllErrors();
+//            for (ObjectError obj: allError){
+//                System.out.println(obj.getDefaultMessage());
+//            }
+//            //将错误信息传到页面
+//            model.addAttribute("allErrors",allError);
+//            //model回显
+//            model.addAttribute("items",itemsCustom);
+//            return "items/error";
+//        }
+
+        //原始图片名称
+        String originalFilename = items_pic.getOriginalFilename();
+
+        if (items_pic != null && originalFilename != null && originalFilename.length() > 0){
+            //存储图片的物理路径
+            String pic_path = "F:\\upload\\";
+            //新图片名称
+            String newFileName = UUID.randomUUID() + originalFilename.substring(originalFilename.lastIndexOf("."));
+            //新图片
+            File newFile = new File(pic_path + newFileName);
+            //将内存中数据写入磁盘
+            items_pic.transferTo(newFile);
+            //将新图片名称写到itemsCustom中
+            itemsCustom.setPic(newFileName);
+
+            itemsService.updateByPrimaryKeyWithBLOBs(id,itemsCustom);
         }
 
         return "success";

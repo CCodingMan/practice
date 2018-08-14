@@ -45,5 +45,6 @@
     <orderEntry type="library" exported="" name="myMybatis" level="project" />
     <orderEntry type="library" exported="" name="springmvc" level="project" />
     <orderEntry type="library" exported="" name="validator" level="project" />
+    <orderEntry type="library" exported="" name="fileload" level="project" />
   </component>
 </module>
