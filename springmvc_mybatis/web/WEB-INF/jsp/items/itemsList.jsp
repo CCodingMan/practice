@@ -17,6 +17,10 @@
     </script>
 </head>
 <body>
+当前用户：${userName}
+<c:if test="${userName!=null}">
+    <a href="${pageContext.request.contextPath}/logout.action">退出</a>
+</c:if>
 <form name="itemsForm" method="post">
     查询条件：
     <table width="100%" border="1">

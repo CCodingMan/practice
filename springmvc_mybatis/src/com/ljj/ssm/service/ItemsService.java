@@ -16,4 +16,6 @@ public interface ItemsService {
     ItemsCustom selectByPrimaryKey(Integer id) throws Exception;
 
     void updateByPrimaryKeyWithBLOBs(Integer id, ItemsCustom itemsCustom) throws Exception;
+
+
 }
